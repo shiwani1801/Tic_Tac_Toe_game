@@ -26,7 +26,7 @@ public class TicTacToe {
      * Static method to create empty board
      * It takes board array indexes from 1 to 9 using for loop
      */
-    private static void createEmptyBoard() {
+    static void createEmptyBoard() {
         for (int index = 1; index < board.length; index++) {
             board[index] = ' ';
         }
@@ -37,7 +37,7 @@ public class TicTacToe {
      * Method Name: chooseLetter
      *  if user letter is 'X' then computer letter is become 'O' otherwise it becomes 'X'
      */
-    private static void chooseLetter() {
+    static void chooseLetter() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Choose a letter :: X or O : ");
         userLetter = scanner.next().toUpperCase().charAt(0);
@@ -49,7 +49,7 @@ public class TicTacToe {
      * Method Name: showBoard
      * method to display current board
      */
-    private static void showBoard() {
+    static void showBoard() {
         System.out.println(board[1] + " | " + board[2] + " | " + board[3]);
         System.out.println("----------");
         System.out.println(board[4] + " | " + board[5] + " | " + board[6]);
@@ -61,7 +61,7 @@ public class TicTacToe {
      * Method Name: playerTurn
      *  method to make user to move to desired location
      */
-    private static void playerTurn() {
+     static void playerTurn() {
         int playerMove;
         while (true) {
             Scanner scanner = new Scanner(System.in);
@@ -79,7 +79,7 @@ public class TicTacToe {
      * Method Name: checkFreeSpace
      * method to check if space is available in the board.
      */
-    private static void checkFreeSpace() {
+     static void checkFreeSpace() {
         boolean isSpaceAvailable = false;
         int numOfFreeSpaces = 0;
         for (int index = 1; index < board.length; index++) {
@@ -100,7 +100,7 @@ public class TicTacToe {
      * Method Name: checkFirstPlayer
      * method to check who plays first computer or user
      */
-    private static void checkFirstPlayer() {
+    static void checkFirstPlayer() {
         int Head = 0;
         double toss = Math.floor(Math.random() * 10) % 2;
         if (toss == Head) {
@@ -114,7 +114,7 @@ public class TicTacToe {
      * MethodName: winner
      * method to check player possible winning positions
      */
-    private static void winner() {
+    static void winner() {
         if ((board[1] == userLetter && board[2] == userLetter && board[3] == userLetter) ||
                 (board[4] == userLetter && board[5] == userLetter && board[6] == userLetter) ||
                 (board[7] == userLetter && board[8] == userLetter && board[9] == userLetter) ||
