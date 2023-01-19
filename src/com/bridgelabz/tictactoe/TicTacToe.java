@@ -19,7 +19,7 @@ public class TicTacToe {
      * Static method to create empty board
      * It takes board array indexes from 1 to 9 using for loop
      */
-    private static void createEmptyBoard() {
+   static void createEmptyBoard() {
         for (int index = 1; index < board.length; index++) {
             board[index] = ' ';
         }
@@ -30,7 +30,7 @@ public class TicTacToe {
      * Method Name: chooseLetter
      * if user letter is 'X' then computer letter is become 'O' otherwise it becomes 'X'
      */
-    private static void chooseLetter() {
+    static void chooseLetter() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Choose a letter :: X or O : ");
         userLetter = scanner.next().toUpperCase().charAt(0);
