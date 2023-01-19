@@ -15,7 +15,7 @@ public class TicTacToe {
             playerTurn();
             showBoard();
             checkFreeSpace();
-
+            checkFirstPlayer();
         }
     }
 
@@ -76,7 +76,7 @@ public class TicTacToe {
     /**
      * UC5
      * Method Name: checkFreeSpace
-     * Description: method to check if space is available in the board.
+     * method to check if space is available in the board.
      */
     private static void checkFreeSpace() {
         boolean isSpaceAvailable = false;
@@ -94,6 +94,19 @@ public class TicTacToe {
             System.out.println("Free space is available! you have " + numOfFreeSpaces + " moves left");
         }
     }
-
+    /**
+     * UC6
+     * Method Name: checkFirstPlayer
+     * method to check who plays first computer or user
+     */
+    private static void checkFirstPlayer() {
+        int Head = 0;
+        double toss = Math.floor(Math.random() * 10) % 2;
+        if (toss == Head) {
+            System.out.println("computer starts to play first");
+        } else {
+            System.out.println("User starts to play first");
+        }
+    }
 
 }
