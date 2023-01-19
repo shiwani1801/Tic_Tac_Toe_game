@@ -14,7 +14,7 @@ public class TicTacToe {
      * Static method to create empty board
      * It takes board array indexes from 1 to 9 using for loop
      */
-    private static void createEmptyBoard() {
+    static void createEmptyBoard() {
         for (int index = 1; index < board.length; index++) {
             board[index] = ' ';
         }
