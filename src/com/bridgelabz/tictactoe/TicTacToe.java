@@ -11,7 +11,10 @@ public class TicTacToe {
     public static void main(String[] args) {
         createEmptyBoard();
         chooseLetter();
-        showBoard();
+        while (true) {
+            playerTurn();
+            showBoard();
+        }
     }
 
     /**
@@ -29,7 +32,7 @@ public class TicTacToe {
     /**
      * UC2
      * Method Name: chooseLetter
-     * if user letter is 'X' then computer letter is become 'O' otherwise it becomes 'X'
+     *  if user letter is 'X' then computer letter is become 'O' otherwise it becomes 'X'
      */
     private static void chooseLetter() {
         Scanner scanner = new Scanner(System.in);
@@ -37,6 +40,7 @@ public class TicTacToe {
         userLetter = scanner.next().toUpperCase().charAt(0);
         computerLetter = (userLetter == 'X') ? 'O' : 'X';
     }
+
     /**
      * UC3
      * Method Name: showBoard
@@ -48,6 +52,24 @@ public class TicTacToe {
         System.out.println(board[4] + " | " + board[5] + " | " + board[6]);
         System.out.println("----------");
         System.out.println(board[7] + " | " + board[8] + " | " + board[9]);
+    }
+    /**
+     * UC4
+     * Method Name: playerTurn
+     *  method to make user to move to desired location
+     */
+    private static void playerTurn() {
+        int playerMove;
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Choose your location(1-9): ");
+            playerMove = scanner.nextInt();
+            if (board[playerMove] == ' ') {
+                break;
+            }
+        }
+        System.out.println("Player choose:: " + playerMove);
+        board[playerMove] = userLetter;
     }
 
 
