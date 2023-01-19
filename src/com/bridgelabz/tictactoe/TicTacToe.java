@@ -14,6 +14,8 @@ public class TicTacToe {
         while (true) {
             playerTurn();
             showBoard();
+            checkFreeSpace();
+
         }
     }
 
@@ -70,6 +72,27 @@ public class TicTacToe {
         }
         System.out.println("Player choose:: " + playerMove);
         board[playerMove] = userLetter;
+    }
+    /**
+     * UC5
+     * Method Name: checkFreeSpace
+     * Description: method to check if space is available in the board.
+     */
+    private static void checkFreeSpace() {
+        boolean isSpaceAvailable = false;
+        int numOfFreeSpaces = 0;
+        for (int index = 1; index < board.length; index++) {
+            if ((board[index] == ' ')) {
+                isSpaceAvailable = true;
+                numOfFreeSpaces++;
+            }
+        }
+        if (isSpaceAvailable == false) {
+            System.err.println("Board is full! You can't make another move");
+            System.exit(0);
+        } else {
+            System.out.println("Free space is available! you have " + numOfFreeSpaces + " moves left");
+        }
     }
 
 
